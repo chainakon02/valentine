@@ -7,6 +7,15 @@
 
 </head>
 <body>
+
+
+
+
+  <!-- เพิ่มเพลง -->
+<audio id="bg-music" autoplay loop>
+  <source src="ThreeManDown.mp3" type="audio/mp3">
+  
+</audio>
 <!-- partial:index.partial.html -->
 <div class="envelope">
 </div>
@@ -35,5 +44,24 @@
    <div id="heart-container"></div>
 
    <script src="./Card.js"></script>
+
+
+   <button id="music-btn">🔊 ปิดเสียง</button>
+
+
+   <script>
+    const audio = document.getElementById("bg-music");
+    const musicBtn = document.getElementById("music-btn");
+  
+    musicBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        musicBtn.textContent = "🔊 ปิดเสียง";
+      } else {
+        audio.pause();
+        musicBtn.textContent = "🔇 เปิดเสียง";
+      }
+    });
+  </script>
 </body>
 </html>
